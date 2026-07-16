@@ -250,3 +250,5 @@ against your Firestore project.
 - **Read**: `HomeScreen` → `ProductRepository.getProducts()` streams the catalogue in real time; `MyOrdersScreen` → `OrderRepository.getMyOrders()` streams the signed-in user's own orders.
 - **Security**: Firestore rules (`firestore.rules`) restrict `products` writes to the Console only, and scope every order read/write to the order's own `userId`, matched against Firebase Anonymous Auth's `request.auth.uid`.
 - Firestore collections used: `products` (fields: `name`, `description`, `category`, `price`, `rating`, `reviewCount`, `stock`, `createdAt`) and `orders` (fields: `userId`, `productId`, `productName`, `unitPrice`, `quantity`, `totalAmount`, `customerName`, `phone`, `address`, `createdAt`).
+## Changelog
+- **2026-07-17**: Verified full build (Firebase, Firestore rules, and platform folders) working end-to-end on web and Android.
