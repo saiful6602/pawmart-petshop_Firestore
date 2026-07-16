@@ -1,0 +1,24 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Product catalogue: anyone can READ (browse the shop), but writes are
+    // blocked from the app — products are managed only from the Firebase
+    // Console by the shop owner. This prevents random visitors from
+    // editing prices or adding fake products.
+    match /products/{productId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Orders: a signed-in (anonymous) user can create an order for
+    // themself, and can only read their OWN orders — never anyone else's.
+    match /orders/{orderId} {
+      allow create: if request.auth != null
+                    && request.resource.data.userId == request.auth.uid;
+      allow read: if request.auth != null
+                  && resource.data.userId == request.auth.uid;
+      allow update, delete: if false;
+    }
+  }
+}
