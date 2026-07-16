@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "255006641810",
+    "project_id": "pawmart-petshop-b79c2",
+    "storage_bucket": "pawmart-petshop-b79c2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:255006641810:android:b1d6a02715b058bf47a04b",
+        "android_client_info": {
+          "package_name": "com.example.pet_shop_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANoRnbAmyvAmKbvxDUaWh-PYjMylYhRDM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
